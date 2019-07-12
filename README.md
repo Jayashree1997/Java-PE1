@@ -1,4 +1,5 @@
 #Java-Exercise1
+
 **********Java Language Basics - Practice Exercise 1*********** ---------------------------------------------------------------------------------------------------- 
 1. Write a program which accepts a number as input and check whether the given number is palindrome or not If it is a palindrome then a. Add all the even numbers and check whether the sum is more than 25. b. Print success and failure messages for all 3 conditions Input : 2468642 
 Output : 2468642 is palindrome and the sum of even numbers is greater than 25 
