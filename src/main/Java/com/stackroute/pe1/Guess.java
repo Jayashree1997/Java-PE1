@@ -9,29 +9,29 @@ public class Guess {
         /*Maximum limit for random number*/
         private static final int max = 50;
 
-        public static void main(String[] args) {
-            Scanner s = new Scanner(System.in);
+        public String guess(int guess){
+            String out="";
+           // Scanner s = new Scanner(System.in);
             Random random = new Random();
             /*Pick a random number within the "min" and "max" limit*/
             final int pickedNumber = random.nextInt((max - min) + 1) + min;
-            System.out.println("Picked Number: " + pickedNumber);
+            //System.out.println("Picked Number: " + pickedNumber);
             /*Used to store the input from the user*/
-            int guess = 0;
+            //int guess = 0;
             /*Loop until the user guesses correctly*/
             while (true) {
-                System.out.println("Enter your guess: ");
-                guess = s.nextInt();
+                //System.out.println("Enter your guess: ");
+                //guess = s.nextInt();
                 if (guess == pickedNumber){
-                    System.out.println("Number guessed matches the original number");
+                    out+="Number guessed matches the original number";
                     break;
                 } else if (guess > pickedNumber) {
-                    System.out.println("Number guessed is more than original number");
+                    out+="Number guessed is more than original number";
                 } else {
-                    System.out.println("Number guessed is less than original number");
+                    out+="Number guessed is less than original number";
                 }
-            }
-            /*Close the scanner*/
-            s.close();
+            } return out;
+
         }
     }
 
