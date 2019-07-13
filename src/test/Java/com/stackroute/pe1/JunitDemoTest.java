@@ -44,10 +44,4 @@ public class JunitDemoTest {
         String actualResult= junitDemo.reverseString("Hello");
         assertEquals("olleH", actualResult);
     }
-//   @Test
-//    public void givenNullShouldThrowNullPointException(){
-//       String actualResult= junitDemo.reverseString(null);
-//
-//   }
-
 }

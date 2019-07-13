@@ -1,32 +1,18 @@
 package com.stackroute.pe1;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class Capital
 {
-    public static void main(String args[]) throws IOException
-    {
-        char m;
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter any alphabet:");
-        m = (char) bf.read();
-        if(m >= 97 && m <= 123)
-        {
-            System.out.println("Lower Case");
+    public String capital(char m) {
+        String result = "";
+        //       BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        if (m >= 97 && m <= 123) {
+            result+= "Lower Case";
+        } else if (m >= 65 && m <= 96) {
+            result+= "Upper Case";
+        } else if (m >= 48 && m <= 57) {
+            result+= "Digit";
+        } else {
+            result+= "It's a special character";
         }
-        else if(m >= 65 && m <= 96)
-        {
-            System.out.println("Upper Case");
-        }
-        else if(m >= 48 && m <= 57)
-        {
-            System.out.println("Digit");
-        }
-        else
-        {
-            System.out.println("It's a special character");
-        }
+        return result;
     }
 }
