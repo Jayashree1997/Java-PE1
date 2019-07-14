@@ -1,33 +1,36 @@
 package com.stackroute.pe1;
-import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.Scanner;
+
+
 public class Sort {
-    public static class SortAndAddDigits {
-        public static void main(String[] args) {
-            Scanner s = new Scanner(System.in);
-            System.out.println("Enter number: ");
-            int number = s.nextInt();
-            int tempNumber = number;
-            int sum = 0;
-            ArrayList<Integer> digitsArray = new ArrayList<>();
-            while (tempNumber > 0) {
-                digitsArray.add(tempNumber % 10);
-                tempNumber /= 10;
+    public String integerSorter(int number) {
+
+        int i = 0;
+        int temp;
+        int sum = 0;
+        int[] arr = new int[12];
+        do {
+            arr[i] = number % 10;
+            if (arr[i] % 2 == 0) {
+                sum += arr[i];
             }
-            Collections.sort(digitsArray, Collections.reverseOrder());
-            for (Integer digit : digitsArray) {
-                tempNumber = (tempNumber * 10) + digit;
-                if ((digit % 2) == 0) {
-                    sum += digit;
+            number /= 10;
+            i++;
+        } while (number != 0);
+
+        for (int k = 0; k < i; k++) {
+            for (int j = k + 1; j < i; j++) {
+                if (arr[k] < arr[j]) {
+                    temp = arr[k];
+                    arr[k] = arr[j];
+                    arr[j] = temp;
                 }
             }
-            System.out.println("Sorted number: " + tempNumber);
-            System.out.println("Sum of even number: " + sum);
-            System.out.println((sum > 15) ? "True" : "False");
-            /*Close the scanner*/
-            s.close();
         }
+        if (sum > 15) {
+            return ("True");
+        } else
+            return ("False");
     }
 }
-
